@@ -5,3 +5,7 @@
 *.log
 *.tmp
 *.venv
+*.notes
+*.html
+*.css
+*.csv

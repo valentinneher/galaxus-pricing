@@ -1,0 +1,4 @@
+name = "edge-proxy"
+main = "workers/edge-proxy.js"
+compatibility_date = "2025-05-29"
+workers_dev = true

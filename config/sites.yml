@@ -1,5 +1,5 @@
 mediamarkt:
-  selector: "div[data-test='mms-price'] span.sc-e0c7d9f7-0.bPkjPs"
+  selector: 'div[data-test="mms-price"] span:nth-of-type(2)'
   type: "html"
   skus:
     - id: iphone15-128
