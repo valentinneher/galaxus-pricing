@@ -1,0 +1,73 @@
+{
+  "id": "/subscriptions/f46a038d-fe37-4cc5-b21f-f20a3611b7ef/resourceGroups/galaxus-demo/providers/Microsoft.App/jobs/scheduler-job",
+  "identity": {
+    "type": "None"
+  },
+  "location": "Switzerland North",
+  "name": "scheduler-job",
+  "properties": {
+    "configuration": {
+      "dapr": null,
+      "eventTriggerConfig": null,
+      "identitySettings": [],
+      "manualTriggerConfig": null,
+      "registries": [
+        {
+          "identity": "",
+          "passwordSecretRef": "dockerio-valentinneher",
+          "server": "docker.io",
+          "username": "valentinneher"
+        }
+      ],
+      "replicaRetryLimit": 0,
+      "replicaTimeout": 10,
+      "scheduleTriggerConfig": {
+        "cronExpression": "*/5 * * * *",
+        "parallelism": 1,
+        "replicaCompletionCount": 1
+      },
+      "secrets": [
+        {
+          "name": "dockerio-valentinneher"
+        }
+      ],
+      "triggerType": "Schedule"
+    },
+    "environmentId": "/subscriptions/f46a038d-fe37-4cc5-b21f-f20a3611b7ef/resourceGroups/galaxus-demo/providers/Microsoft.App/managedEnvironments/galaxus-ca-env",
+    "eventStreamEndpoint": "https://switzerlandnorth.azurecontainerapps.dev/subscriptions/f46a038d-fe37-4cc5-b21f-f20a3611b7ef/resourceGroups/galaxus-demo/containerApps/scheduler-job/eventstream",
+    "provisioningState": "Succeeded",
+    "runningStatus": "Ready",
+    "template": {
+      "containers": [
+        {
+          "env": [
+            {
+              "name": "CONFIG_URL",
+              "value": "https://raw.githubusercontent.com/valentinneher/galaxus-pricing/main/config/sites.yml"
+            }
+          ],
+          "image": "docker.io/valentinneher/dg-scheduler:latest",
+          "imageType": "ContainerImage",
+          "name": "scheduler-job",
+          "resources": {
+            "cpu": 0.25,
+            "memory": "0.5Gi"
+          }
+        }
+      ],
+      "initContainers": null,
+      "volumes": null
+    },
+    "workloadProfileName": "Consumption"
+  },
+  "resourceGroup": "galaxus-demo",
+  "systemData": {
+    "createdAt": "2025-05-29T14:24:00.6562271",
+    "createdBy": "valentin.neher@gmail.com",
+    "createdByType": "User",
+    "lastModifiedAt": "2025-05-30T09:27:44.8387509",
+    "lastModifiedBy": "valentin.neher@gmail.com",
+    "lastModifiedByType": "User"
+  },
+  "type": "Microsoft.App/jobs"
+}
